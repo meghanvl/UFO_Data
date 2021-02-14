@@ -19,29 +19,45 @@ displayTable(tableData);
 
 // listen for events and search through the columns
 const dateInput = d3.select("#datetime");
-const cityInput = d3.select("#city");
-const stateInput = d3.select("#state");
-const countryInput = d3.select("#country");
-const shapeInput = d3.select("#shape");
+// const cityInput = d3.select("#city");
+// const stateInput = d3.select("#state");
+// const countryInput = d3.select("#country");
+// const shapeInput = d3.select("#shape");
+
+// filtersAll = tableData.filter(row => {
+//     return (row.datetime === dateInput.property("value")) ||
+//     (row.city === cityInput.property("value")) ||
+//     (row.state === stateInput.property("value")) ||
+//     (row.country === countryInput.property("value")) ||
+//     (row.shape === shapeInput.property("value"))
+// })
+
+// displayTable(filtersAll);
+
+
 
 function handleClick() {
     // prevents page from being refreshed
     d3.event.preventDefault();
-    // display new table based on filtered date
-    const dateTable = tableData.filter(row => row.datetime === dateInput.property("value"))
-    const cityTable = tableData.filter(row => row.city === cityInput.property("value"))
-    // let stateTable = tableData.filter(row => row.state === stateInput.property("value"))
+
+    // display new table based on filtered data
+    let dateTable = tableData.filter(row => row.datetime === dateInput.property("value"))
+    // let cityTable = tableData.filter(row => row.city === cityInput.property("value")) 
+    // let stateTable = tableData.filter(row => row.state === stateInput.property("value")) 
     // let countryTable = tableData.filter(row => row.country === countryInput.property("value"))
     // let shapeTable = tableData.filter(row => row.shape === shapeInput.property("value"))
+
     // display filtered table
     displayTable(dateTable);
-    displayTable(cityTable);
+    // displayTable(cityTable);
     // displayTable(stateTable);
     // displayTable(countryTable);
     // displayTable(shapeTable);
 };
 
 button.on("click", handleClick);
+
+
 
 
 
