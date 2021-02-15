@@ -3,8 +3,6 @@ let tableData = data;
 let tbody = d3.select("tbody");
 // select filter button (Filter Table)
 let button = d3.select("#filter-btn");
-// select the form
-let form = d3.select("#form");
 
 
 // append data table to webpage 
@@ -23,22 +21,20 @@ displayTable(tableData);
 
 // listen for events and search through columns based on filter search
 
-button.on("click", handleClick);
-form.on("submit", handleClick);
-
 function handleClick() {
     // prevents page from being refreshed
     d3.event.preventDefault();
     // filter data table by date
     let date = d3.select("#datetime");
-    let dateTable = tableData.filter(row => row.datetime === date.property("value"));
+    let dateTable = tableData.filter(row => row.datetime === date.property("value")); 
     // display filtered table
     displayTable(dateTable);
 }
 
-// button.on("click", handleClick);
+button.on("click", handleClick);
 
-function handleClick(city) {
+
+function handleClick() {
     d3.event.preventDefault();
     let cityInput = d3.select("#city");
     let cityTable = tableData.filter(row => row.city === cityInput.property("value"));
@@ -48,7 +44,7 @@ function handleClick(city) {
 // button.on("click", handleClick);
 
 
-function handleClick(state) {
+function handleClick() {
     d3.event.preventDefault();
     let stateInput = d3.select("#state");
     let stateTable = tableData.filter(row => row.state === stateInput.property("value"));
@@ -58,7 +54,7 @@ function handleClick(state) {
 // button.on("click", handleClick);
 
 
-function handleClick(country) {
+function handleClick() {
     d3.event.preventDefault();
     let countryInput = d3.select("#country");
     let countryTable = tableData.filter(row => row.country === countryInput.property("value"));
@@ -68,7 +64,7 @@ function handleClick(country) {
 // button.on("click", handleClick);
 
 
-function handleClick(shape) {
+function handleClick() {
     d3.event.preventDefault();
     let shapeInput = d3.select("#shape");
     let shapeTable = tableData.filter(row => row.shape === shapeInput.property("value"));
@@ -76,6 +72,8 @@ function handleClick(shape) {
 };
 
 // button.on("click", handleClick);
+
+
 
 
 
