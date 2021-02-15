@@ -26,7 +26,6 @@ function dateFilter() {
     displayTable(dateTable);
 }
 
-
 function cityFilter() {
     let cityInput = d3.select("#city");
     let cityTable = dateTable.filter(row => row.city === cityInput.property("value"));
@@ -58,7 +57,7 @@ function handleChange(event) {
 
 button.on("change", handleChange);
 
-// listen for events and search through columns based on filter search
+// filter table by date
 
 // function handleClick() {
 //     // prevents page from being refreshed
@@ -73,44 +72,6 @@ button.on("change", handleChange);
 // button.on("click", handleClick);
 
 
-// function handleClick() {
-//     d3.event.preventDefault();
-//     let cityInput = d3.select("#city");
-//     let cityTable = tableData.filter(row => row.city === cityInput.property("value"));
-//     displayTable(cityTable);
-// };
-
-// button.on("click", handleClick);
-
-
-// function handleClick() {
-//     d3.event.preventDefault();
-//     let stateInput = d3.select("#state");
-//     let stateTable = tableData.filter(row => row.state === stateInput.property("value"));
-//     displayTable(stateTable);
-// };
-
-// button.on("click", handleClick);
-
-
-// function handleClick() {
-//     d3.event.preventDefault();
-//     let countryInput = d3.select("#country");
-//     let countryTable = tableData.filter(row => row.country === countryInput.property("value"));
-//     displayTable(countryTable);
-// };
-
-// button.on("click", handleClick);
-
-
-// function handleClick() {
-//     d3.event.preventDefault();
-//     let shapeInput = d3.select("#shape");
-//     let shapeTable = tableData.filter(row => row.shape === shapeInput.property("value"));
-//     displayTable(shapeTable);
-// };
-
-// button.on("click", handleClick);
 
 
 
